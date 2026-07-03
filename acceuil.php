@@ -1,9 +1,6 @@
 <?php
 // Database connection parameters
-$db_host = 'localhost';
-$db_username = 'root';
-$db_password = '';
-$db_name = 'pch';
+require_once __DIR__ . '/db_info.php';
 
 try {
     // Create a new PDO connection
@@ -68,12 +65,12 @@ $conn = null;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PCHdash</title>
-    <link rel="shortcut icon" href="../pch/images/logopch.png" />
-      <link rel="stylesheet" href="../pch/sidebar/assets/css/backend.css?v=1.0.0">
-      <link rel="stylesheet" href="../pch/sidebar/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
-      <link rel="stylesheet" href="../pch/sidebar/assets/css/backend-plugin.min.css">
-      <link rel="stylesheet" href="../pch/sidebar/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
-      <link rel="stylesheet" href="../pch/sidebar/assets/vendor/remixicon/fonts/remixicon.css">
+    <link rel="shortcut icon" href="images/logopch.png" />
+      <link rel="stylesheet" href="sidebar/assets/css/backend.css?v=1.0.0">
+      <link rel="stylesheet" href="sidebar/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+      <link rel="stylesheet" href="sidebar/assets/css/backend-plugin.min.css">
+      <link rel="stylesheet" href="sidebar/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+      <link rel="stylesheet" href="sidebar/assets/vendor/remixicon/fonts/remixicon.css">
 </head>
 <body>
 <div class="wrapper">
@@ -151,18 +148,18 @@ $conn = null;
 
 <!-------------------------------------------------------------------------------->
         <!-- Backend Bundle JavaScript -->
-        <script src="../pch/sidebar/assets/js/backend-bundle.min.js"></script>
+        <script src="sidebar/assets/js/backend-bundle.min.js"></script>
     
     <!-- Table Treeview JavaScript -->
-    <script src="../pch/sidebar/assets/js/table-treeview.js"></script>
+    <script src="sidebar/assets/js/table-treeview.js"></script>
     
     <!-- Chart Custom JavaScript -->
-    <script src="../pch/sidebar/assets/js/customizer.js"></script>
+    <script src="sidebar/assets/js/customizer.js"></script>
     
     <!-- Chart Custom JavaScript -->
-    <script async src="../pch/sidebar/assets/js/chart-custom.js"></script>
+    <script async src="sidebar/assets/js/chart-custom.js"></script>
     
     <!-- app JavaScript -->
-    <script src="../pch/sidebar/assets/js/app.js"></script>
+    <script src="sidebar/assets/js/app.js"></script>
 </body>
 </html>
