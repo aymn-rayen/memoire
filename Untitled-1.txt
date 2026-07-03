@@ -1,0 +1,35 @@
+
+ <!--quantités produites par produit-->
+ SELECT PRODUIT, SUM(QTE_FACT) AS quantites_vendu
+FROM (
+    SELECT dci.DESI_PRO AS PRODUIT, bechar_detail_facture.QTE_FACT
+    FROM bechar_detail_facture
+    JOIN dci ON bechar_detail_facture.CODE_PRO = dci.CODE_PRO
+    
+    UNION ALL
+    
+    SELECT dci.DESI_PRO AS PRODUIT, alger_detail_facture.QTE_FACT
+    FROM alger_detail_facture
+    JOIN dci ON alger_detail_facture.CODE_PRO = dci.CODE_PRO
+    
+    UNION ALL
+    
+    SELECT dci.DESI_PRO AS PRODUIT, oran_detail_facture.QTE_FACT
+    FROM oran_detail_facture
+    JOIN dci ON oran_detail_facture.CODE_PRO = dci.CODE_PRO
+    
+    UNION ALL
+    
+    SELECT dci.DESI_PRO AS PRODUIT, biskra.QTE_FACT
+    FROM biskra_detail_facture
+    JOIN dci ON biskra_detail_facture.CODE_PRO = dci.CODE_PRO
+    
+    UNION ALL
+    
+    SELECT dci.DESI_PRO AS PRODUIT, annaba_detail_facture.QTE_FACT
+    FROM annaba_detail_facture
+    JOIN dci ON annaba_detail_facture.CODE_PRO = dci.CODE_PRO
+) AS combined_data
+GROUP BY PRODUIT
+ORDER BY quantites_vendu DESC
+LIMIT 5;
